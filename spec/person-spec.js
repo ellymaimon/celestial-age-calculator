@@ -60,4 +60,18 @@ describe('Person', function () {
 
         expect(ageInVenus).toEqual(expectedAgeInVenus);
     });
+
+    it('should test whether the age of the user in Earth years can be calculated', function() {
+        let planet = "earth";
+        let ageInEarth = reusablePerson.ageInPlanetYears(planet);
+
+        let ageInSeconds = reusablePerson.ageInSeconds();
+        let secondsInEarthYear = reusablePerson.secondsInYear;
+        let expectedAgeInEarth = ageInSeconds/secondsInEarthYear;
+
+        console.log(ageInEarth);
+        console.log(expectedAgeInEarth);
+
+        expect(ageInEarth).toEqual(expectedAgeInEarth);
+    });
 });
