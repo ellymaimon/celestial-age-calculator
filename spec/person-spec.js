@@ -214,8 +214,6 @@ describe('Person', function () {
 		let userAgeInEarth = oldPerson.ageInPlanetYears(planet);
 		let expectedYearsLivedAboveExpecancy = userAgeInEarth - expectancyInEarth;
 
-		console.log(yearsLivedAboveExpectancy);
-
 		expect(yearsLivedAboveExpectancy).toBeGreaterThan(0);
 		expect(yearsLivedAboveExpectancy).toEqual(expectedYearsLivedAboveExpecancy);
 	});
@@ -293,8 +291,6 @@ describe('Person', function () {
 		let expectancyInPluto = oldPerson.lifeExpectancy / oldPerson.planetOrbitalPeriods[8];
 		let userAgeInPluto = oldPerson.ageInPlanetYears(planet);
 		let expectedYearsLivedAboveExpecancy = userAgeInPluto - expectancyInPluto;
-
-		console.log(yearsLivedAboveExpectancy);
 
 		expect(yearsLivedAboveExpectancy).toBeGreaterThan(0);
 		expect(yearsLivedAboveExpectancy).toEqual(expectedYearsLivedAboveExpecancy);
