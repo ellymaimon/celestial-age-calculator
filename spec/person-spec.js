@@ -134,7 +134,6 @@ describe('Person', function () {
         let planet = "mercury";
         let yearsToLive = reusablePerson.yearsToLive(planet);
 
-
         let expectancyInMercury = reusablePerson.lifeExpectancy / reusablePerson.planetOrbitalPeriods[0]; // ~331
         let userAgeInMercury = reusablePerson.ageInPlanetYears(planet);
         let expectedYearsToLive = expectancyInMercury - userAgeInMercury;
@@ -146,12 +145,20 @@ describe('Person', function () {
         let planet = "venus";
         let yearsToLive = reusablePerson.yearsToLive(planet);
 
-
         let expectancyInVenus = reusablePerson.lifeExpectancy / reusablePerson.planetOrbitalPeriods[1]; // ~331
         let userAgeInVenus = reusablePerson.ageInPlanetYears(planet); 
         let expectedYearsToLive = expectancyInVenus - userAgeInVenus;
 
-        console.log(expectedYearsToLive);
+        expect(yearsToLive).toEqual(expectedYearsToLive);
+    });
+
+    it('should test whether the remaining years a user has to live in Earth can be calculated', function () {
+        let planet = "earth";
+        let yearsToLive = reusablePerson.yearsToLive(planet);
+
+        let expectancyInEarth = reusablePerson.lifeExpectancy / reusablePerson.planetOrbitalPeriods[2]; // ~331
+        let userAgeInEarth = reusablePerson.ageInPlanetYears(planet); 
+        let expectedYearsToLive = expectancyInEarth - userAgeInEarth;
 
         expect(yearsToLive).toEqual(expectedYearsToLive);
     });
