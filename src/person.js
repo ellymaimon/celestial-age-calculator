@@ -3,10 +3,13 @@ export class Person {
     this.ageInYears = ageInYears;
     this.birthDate = new Date("0" + birthMonth + "/" + birthDay + "/" + birthYear);
     this.currentDate = new Date();
+    this.secondsInYear = 31557600;
   };
 
+
+
   convertYearsToSeconds() {
-    let ageInSeconds = this.ageInYears * 31557600;
+    let ageInSeconds = this.ageInYears * this.secondsInYear;
     return ageInSeconds;
   }
 
@@ -17,8 +20,9 @@ export class Person {
     return ageInSeconds;
   }
 
-
+  ageInMercuryYears() {
+    let ageInSeconds = this.ageInSeconds();
+    let secondsInMercuryYear = this.secondsInYear * 0.24;
+    return ageInSeconds/secondsInMercuryYear;
+  }
 }
-
-//day = 86400 seconds
-//var d = new Date(year, month, day, hours, minutes, seconds, milliseconds
