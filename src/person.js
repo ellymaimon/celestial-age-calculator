@@ -89,5 +89,11 @@ export class Person {
       let userAgeInVenus = this.ageInPlanetYears(planet);
       return expectancy - userAgeInVenus;
     }
+
+    if (planet === "earth") {
+      let expectancy = this.lifeExpectancy / this.planetOrbitalPeriods[2];
+      let userAgeInEarth = this.ageInPlanetYears(planet);
+      return expectancy - userAgeInEarth;
+    }
   }
 }
