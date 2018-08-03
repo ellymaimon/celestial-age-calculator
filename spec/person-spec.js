@@ -41,9 +41,6 @@ describe('Person', function () {
         let secondsInMercuryYear = reusablePerson.secondsInYear * 0.241;
         let expectedAgeInMercury = ageInSeconds/secondsInMercuryYear;
 
-        console.log(ageInMercury);
-        console.log(expectedAgeInMercury);
-
         expect(ageInMercury).toEqual(expectedAgeInMercury);
     });
 
@@ -54,9 +51,6 @@ describe('Person', function () {
         let ageInSeconds = reusablePerson.ageInSeconds();
         let secondsInVenusYear = reusablePerson.secondsInYear * 0.6152;
         let expectedAgeInVenus = ageInSeconds/secondsInVenusYear;
-
-        console.log(ageInVenus);
-        console.log(expectedAgeInVenus);
 
         expect(ageInVenus).toEqual(expectedAgeInVenus);
     });
@@ -69,9 +63,6 @@ describe('Person', function () {
         let secondsInEarthYear = reusablePerson.secondsInYear;
         let expectedAgeInEarth = ageInSeconds/secondsInEarthYear;
 
-        console.log(ageInEarth);
-        console.log(expectedAgeInEarth);
-
         expect(ageInEarth).toEqual(expectedAgeInEarth);
     });
 
@@ -83,9 +74,19 @@ describe('Person', function () {
         let secondsInMarsYear = reusablePerson.secondsInYear * 1.8809;
         let expectedAgeInMars = ageInSeconds/secondsInMarsYear;
 
-        console.log(ageInMars);
-        console.log(expectedAgeInMars);
-
         expect(ageInMars).toEqual(expectedAgeInMars);
     });
+
+    it('should test whether the age of the user in Jupiter years can be calculated', function() {
+        let planet = "jupiter";
+        let ageInJupiter = reusablePerson.ageInPlanetYears(planet);
+
+        let ageInSeconds = reusablePerson.ageInSeconds();
+        let secondsInJupiterYear = reusablePerson.secondsInYear * 11.8618;
+        let expectedAgeInJupiter = ageInSeconds/secondsInJupiterYear;
+
+        expect(ageInJupiter).toEqual(expectedAgeInJupiter);
+    });
+
+
 });
