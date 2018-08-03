@@ -4,11 +4,9 @@ export class Person {
     this.birthDate = new Date("0" + birthMonth + "/" + birthDay + "/" + birthYear);
     this.currentDate = new Date();
     this.secondsInYear = 31557600;
-    //In order: Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto
-    this.planetOrbitalPeriods = [0.241, 0.6152, 1.8809, 11.8618, 29.457, 84, 164.8, 248];
+    //In order: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto
+    this.planetOrbitalPeriods = [0.241, 0.6152, 1, 1.8809, 11.8618, 29.457, 84, 164.8, 248];
   };
-
-
 
   convertYearsToSeconds() {
     let ageInSeconds = this.ageInYears * this.secondsInYear;
@@ -22,23 +20,17 @@ export class Person {
     return ageInSeconds;
   }
 
-  ageInMercuryYears() {
-    let ageInSeconds = this.ageInSeconds();
-    let secondsInMercuryYear = this.secondsInYear * 0.241;
-    return ageInSeconds/secondsInMercuryYear;
-  }
+  ageInPlanetYears(planet) {
+    if (planet === "mercury") {
+      let ageInSeconds = this.ageInSeconds();
+      let secondsInPlanetYear = this.secondsInYear * this.planetOrbitalPeriods[0];
+      return ageInSeconds/secondsInPlanetYear; 
+    }
 
-  ageInVenusYears() {
-    let ageInSeconds = this.ageInSeconds();
-    let secondsInVenusYear = this.secondsInYear * 0.6152;
-    return ageInSeconds/secondsInVenusYear;
+    if (planet === "venus") {
+      let ageInSeconds = this.ageInSeconds();
+      let secondsInPlanetYear = this.secondsInYear * this.planetOrbitalPeriods[1];
+      return ageInSeconds/secondsInPlanetYear; 
+    }
   }
-
-  // ageInPlanetYears(planet) {
-  //   if (planet == "mercury") {
-  //     let ageInSeconds = this.ageInSeconds();
-  //     let secondsInPlanetYear = this.secondsInYear * this.planetOrbitalPeriods[0];
-  //     return ageInSeconds/secondsInPlanetYear; 
-  //   }
-  // }
 }
