@@ -1,6 +1,5 @@
 export class Person {
-  constructor(ageInYears, birthYear, birthMonth, birthDay) {
-    this.ageInYears = ageInYears;
+  constructor(birthYear, birthMonth, birthDay) {
     this.birthDate = new Date("0" + birthMonth + "/" + birthDay + "/" + birthYear);
     this.currentDate = new Date();
     this.secondsInYear = 31557600;
@@ -8,11 +7,6 @@ export class Person {
     //In order: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto
     this.planetOrbitalPeriods = [0.241, 0.6152, 1, 1.8809, 11.8618, 29.457, 84, 164.8, 248];
   };
-
-  convertYearsToSeconds() {
-    let ageInSeconds = this.ageInYears * this.secondsInYear;
-    return ageInSeconds;
-  }
 
   ageInSeconds() {
     if (this.birthDate.getTime() < 0) {

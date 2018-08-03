@@ -5,28 +5,15 @@ describe('Person', function () {
 	let oldPerson;
 
 	beforeEach(function () {
-		reusablePerson = new Person(26, 1991, 8, 21);
-		oldPerson = new Person(82, 1935, 8, 21);
+		reusablePerson = new Person(1991, 8, 21);
+		oldPerson = new Person(1935, 8, 21);
 	});
 
 	it('should test whether a Person has an age, a birth date, and a current date', function () {
-		expect(reusablePerson.ageInYears).toEqual(26);
 		expect(reusablePerson.birthDate.getFullYear()).toEqual(1991);
 		expect(reusablePerson.birthDate.getMonth()).toEqual(7);
 		expect(reusablePerson.birthDate.getDate()).toEqual(21);
 		expect(reusablePerson.currentDate.getMonth()).toEqual(7);
-	});
-
-	it('should test whether a the age of a person can be converted to seconds', function () {
-		let ageInSeconds = reusablePerson.convertYearsToSeconds();
-		let expectedAgeInSeconds = 26 * 31557600;
-		expect(ageInSeconds).toEqual(expectedAgeInSeconds);
-	});
-
-	it('should test whether a the age of an old person can be converted to seconds', function () {
-		let ageInSeconds = oldPerson.convertYearsToSeconds();
-		let expectedAgeInSeconds = 82 * 31557600;
-		expect(ageInSeconds).toEqual(expectedAgeInSeconds);
 	});
 
 	it('should test whether the age of a user can be calculated in seconds', function () {
