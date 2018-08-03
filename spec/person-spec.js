@@ -74,4 +74,18 @@ describe('Person', function () {
 
         expect(ageInEarth).toEqual(expectedAgeInEarth);
     });
+
+    it('should test whether the age of the user in Mars years can be calculated', function() {
+        let planet = "mars";
+        let ageInMars = reusablePerson.ageInPlanetYears(planet);
+
+        let ageInSeconds = reusablePerson.ageInSeconds();
+        let secondsInMarsYear = reusablePerson.secondsInYear;
+        let expectedAgeInMars = ageInSeconds/secondsInMarsYear;
+
+        console.log(ageInMars);
+        console.log(expectedAgeInMars);
+
+        expect(ageInMars).toEqual(expectedAgeInMars);
+    });
 });
