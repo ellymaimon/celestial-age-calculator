@@ -15,10 +15,18 @@ export class Person {
   }
 
   ageInSeconds() {
-    let currentTime = this.currentDate.getTime() / 1000;
-    let birthTime = this.birthDate.getTime() / 1000;
-    let ageInSeconds = currentTime - birthTime;
-    return ageInSeconds;
+    if (this.birthDate.getTime() < 0) {
+      let currentTime = this.currentDate.getTime() / 1000;
+      let birthTime = (-this.birthDate.getTime() + this.currentDate.getTime()) / 1000;
+      let ageInSeconds = currentTime - birthTime;
+      return ageInSeconds;
+    } 
+    else {
+      let currentTime = this.currentDate.getTime() / 1000;
+      let birthTime = this.birthDate.getTime() / 1000;
+      let ageInSeconds = currentTime - birthTime;
+      return ageInSeconds;
+    }
   }
 
   ageInPlanetYears(planet) {
@@ -80,56 +88,59 @@ export class Person {
   yearsToLive(planet) {
     if (planet === "mercury") {
       let expectancy = this.lifeExpectancy / this.planetOrbitalPeriods[0];
-      let userAgeInMercury = this.ageInPlanetYears(planet);
-      return expectancy - userAgeInMercury;
+      let userAgeInPlanet = this.ageInPlanetYears(planet);
+      
+      // if(userAgeInPlanet > expectancy) return userAgeInPlanet - expectancy;
+      // else 
+      return expectancy - userAgeInPlanet;
     }
 
     if (planet === "venus") {
       let expectancy = this.lifeExpectancy / this.planetOrbitalPeriods[1];
-      let userAgeInVenus = this.ageInPlanetYears(planet);
-      return expectancy - userAgeInVenus;
+      let userAgeInPlanet = this.ageInPlanetYears(planet);
+      return expectancy - userAgeInPlanet;
     }
 
     if (planet === "earth") {
       let expectancy = this.lifeExpectancy / this.planetOrbitalPeriods[2];
-      let userAgeInEarth = this.ageInPlanetYears(planet);
-      return expectancy - userAgeInEarth;
+      let userAgeInPlanet = this.ageInPlanetYears(planet);
+      return expectancy - userAgeInPlanet;
     }
 
     if (planet === "mars") {
       let expectancy = this.lifeExpectancy / this.planetOrbitalPeriods[3];
-      let userAgeInMars = this.ageInPlanetYears(planet);
-      return expectancy - userAgeInMars;
+      let userAgeInPlanet = this.ageInPlanetYears(planet);
+      return expectancy - userAgeInPlanet;
     }
 
     if (planet === "jupiter") {
       let expectancy = this.lifeExpectancy / this.planetOrbitalPeriods[4];
-      let userAgeInJupiter = this.ageInPlanetYears(planet);
-      return expectancy - userAgeInJupiter;
+      let userAgeInPlanet = this.ageInPlanetYears(planet);
+      return expectancy - userAgeInPlanet;
     }
 
     if (planet === "saturn") {
       let expectancy = this.lifeExpectancy / this.planetOrbitalPeriods[5];
-      let userAgeInSaturn = this.ageInPlanetYears(planet);
-      return expectancy - userAgeInSaturn;
+      let userAgeInPlanet = this.ageInPlanetYears(planet);
+      return expectancy - userAgeInPlanet;
     }
 
     if (planet === "uranus") {
       let expectancy = this.lifeExpectancy / this.planetOrbitalPeriods[6];
-      let userAgeInUranus = this.ageInPlanetYears(planet);
-      return expectancy - userAgeInUranus;
+      let userAgeInPlanet = this.ageInPlanetYears(planet);
+      return expectancy - userAgeInPlanet;
     }
 
     if (planet === "neptune") {
       let expectancy = this.lifeExpectancy / this.planetOrbitalPeriods[7];
-      let userAgeInNeptune = this.ageInPlanetYears(planet);
-      return expectancy - userAgeInNeptune;
+      let userAgeInPlanet = this.ageInPlanetYears(planet);
+      return expectancy - userAgeInPlanet;
     }
 
     if (planet === "pluto") {
       let expectancy = this.lifeExpectancy / this.planetOrbitalPeriods[8];
-      let userAgeInPluto = this.ageInPlanetYears(planet);
-      return expectancy - userAgeInPluto;
+      let userAgeInPlanet = this.ageInPlanetYears(planet);
+      return expectancy - userAgeInPlanet;
     }
   }
 }
