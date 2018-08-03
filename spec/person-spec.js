@@ -34,11 +34,16 @@ describe('Person', function () {
     });
 
     it('should test whether the age of the user in Mercury years can be calculated', function() {
-        let ageInMercury = reusablePerson.ageInMercury();
+        let ageInMercury = reusablePerson.ageInMercuryYears();
 
         let ageInSeconds = reusablePerson.ageInSeconds();
         let secondsInMercuryYear = reusablePerson.secondsInYear * 0.24;
         let expectedAgeInMercury = ageInSeconds/secondsInMercuryYear;
+
+        console.log(reusablePerson.birthDate);
+        console.log(reusablePerson.currentDate);
+        console.log(reusableDate);
+        console.log(ageInMercury);
 
         expect(ageInMercury).toEqual(expectedAgeInMercury);
     });
