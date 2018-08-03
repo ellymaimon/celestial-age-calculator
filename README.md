@@ -10,8 +10,6 @@ Celestial age calculator is an application that calculate's a user's age in the 
 
 ## Program Specs
 
-* Currently does not handle birth-dates before 1970.
-
 | Behavior | Input | Output |
 |----------|-------|--------|
 | Program takes a user's age and converts it to seconds. | 26 years | 8.199e+8 seconds |
