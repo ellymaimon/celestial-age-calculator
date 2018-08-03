@@ -44,5 +44,11 @@ export class Person {
       let secondsInPlanetYear = this.secondsInYear * this.planetOrbitalPeriods[3];
       return ageInSeconds/secondsInPlanetYear; 
     }
+
+    if (planet === "jupiter") {
+      let ageInSeconds = this.ageInSeconds();
+      let secondsInPlanetYear = this.secondsInYear * this.planetOrbitalPeriods[4];
+      return ageInSeconds/secondsInPlanetYear; 
+    }
   }
 }
