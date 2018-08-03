@@ -80,7 +80,7 @@ describe('Person', function () {
         let ageInMars = reusablePerson.ageInPlanetYears(planet);
 
         let ageInSeconds = reusablePerson.ageInSeconds();
-        let secondsInMarsYear = reusablePerson.secondsInYear;
+        let secondsInMarsYear = reusablePerson.secondsInYear * 1.8809;
         let expectedAgeInMars = ageInSeconds/secondsInMarsYear;
 
         console.log(ageInMars);
