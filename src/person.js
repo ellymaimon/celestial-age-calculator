@@ -4,6 +4,7 @@ export class Person {
     this.birthDate = new Date("0" + birthMonth + "/" + birthDay + "/" + birthYear);
     this.currentDate = new Date();
     this.secondsInYear = 31557600;
+    this.lifeExpectancy = 80;
     //In order: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto
     this.planetOrbitalPeriods = [0.241, 0.6152, 1, 1.8809, 11.8618, 29.457, 84, 164.8, 248];
   };
@@ -73,6 +74,14 @@ export class Person {
       let ageInSeconds = this.ageInSeconds();
       let secondsInPlanetYear = this.secondsInYear * this.planetOrbitalPeriods[8];
       return ageInSeconds/secondsInPlanetYear; 
+    }
+  }
+
+  yearsToLive(planet) {
+    if (planet === "mercury") {
+      let expectancy = this.lifeExpectancy / this.planetOrbitalPeriods[0];
+      let userAgeInMercury = this.ageInPlanetYears(planet); // ~112
+      return expectancy - userAgeInMercury;
     }
   }
 }
