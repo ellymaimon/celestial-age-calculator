@@ -1,14 +1,17 @@
 export class Person {
   constructor(ageInYears, birthYear, birthMonth, birthDay) {
-    this.ageInYears = ageInYears; //26
-    this.birthYear = birthYear; //1991
-    this.birthMonth = birthMonth; //6 (June)
-    this.birthDay = birthDay; // 22
-    this.currentDate = new Date(); //Fri Aug 03 2018 10:26:38 GMT-0700 (Pacific Daylight Time)
+    this.ageInYears = ageInYears;
+    this.birthDate = new Date(birthYear + "-" + birthMonth + "-" + birthDay);
+    this.currentDate = new Date();
   };
 
-  convertToSeconds() {
+  convertYearsToSeconds() {
     let ageInSeconds = this.ageInYears * 31557600;
     return ageInSeconds;
   }
+
+  
 }
+
+//day = 86400 seconds
+//var d = new Date(year, month, day, hours, minutes, seconds, milliseconds
