@@ -37,7 +37,7 @@ describe('Person', function () {
         let ageInMercury = reusablePerson.ageInMercuryYears();
 
         let ageInSeconds = reusablePerson.ageInSeconds();
-        let secondsInMercuryYear = reusablePerson.secondsInYear * 0.24;
+        let secondsInMercuryYear = reusablePerson.secondsInYear * 0.241;
         let expectedAgeInMercury = ageInSeconds/secondsInMercuryYear;
 
         console.log(reusablePerson.birthDate);
@@ -46,5 +46,17 @@ describe('Person', function () {
         console.log(ageInMercury);
 
         expect(ageInMercury).toEqual(expectedAgeInMercury);
+    });
+
+    it('should test whether the age of the user in Venus years can be calculated', function() {
+        let ageInVenus = reusablePerson.ageInVenusYears();
+
+        let ageInSeconds = reusablePerson.ageInSeconds();
+        let secondsInVenusYear = reusablePerson.secondsInYear * 0.6152;
+        let expectedAgeInVenus = ageInSeconds/secondsInVenusYear;
+
+        console.log(ageInVenus);
+
+        expect(ageInVenus).toEqual(expectedAgeInVenus);
     });
 });
