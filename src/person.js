@@ -8,7 +8,7 @@ export class Person {
   };
 
   convertToSeconds() {
-    let ageInSeconds = this.ageInYears * 3.154e+7;
+    let ageInSeconds = this.ageInYears * 31557600;
     return ageInSeconds;
   }
 }
