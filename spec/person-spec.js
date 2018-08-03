@@ -2,9 +2,11 @@ import { Person } from '../src/person.js';
 
 describe('Person', function () {
 	let reusablePerson;
+	let oldPerson;
 
 	beforeEach(function () {
 		reusablePerson = new Person(26, 1991, 8, 21);
+		oldPerson = new Person(82, 1935, 8, 21);
 	});
 
 	it('should test whether a Person has an age, a birth date, and a current date', function () {
@@ -21,11 +23,27 @@ describe('Person', function () {
 		expect(ageInSeconds).toEqual(expectedAgeInSeconds);
 	});
 
-	it('should test whether the age of the user in seconds can be calculated', function () {
+	it('should test whether a the age of an old person can be converted to seconds', function () {
+		let ageInSeconds = oldPerson.convertYearsToSeconds();
+		let expectedAgeInSeconds = 82 * 31557600;
+		expect(ageInSeconds).toEqual(expectedAgeInSeconds);
+	});
+
+	it('should test whether the age of a user can be calculated in seconds', function () {
 		let ageInSeconds = reusablePerson.ageInSeconds();
 
-		let secondsToCurrentDate = reusablePerson.currentDate.getTime() / 1000; //seconds from 1/1/1970 to current date (8/3/2018)
-		let secondsToBirthDate = reusablePerson.birthDate.getTime() / 1000; //seconds from 1/1/1970 to input birth date (8/21/1991)
+		let secondsToCurrentDate = reusablePerson.currentDate.getTime() / 1000;
+		let secondsToBirthDate = reusablePerson.birthDate.getTime() / 1000;
+		let expectedAgeInSeconds = secondsToCurrentDate - secondsToBirthDate;
+
+		expect(ageInSeconds).toEqual(expectedAgeInSeconds);
+	});
+
+	it('should test whether the age of an old user can be calculated in seconds', function () {
+		let ageInSeconds = oldPerson.ageInSeconds();
+
+		let secondsToCurrentDate = oldPerson.currentDate.getTime() / 1000;
+		let secondsToBirthDate = (-oldPerson.birthDate.getTime() + oldPerson.currentDate.getTime()) / 1000;
 		let expectedAgeInSeconds = secondsToCurrentDate - secondsToBirthDate;
 
 		expect(ageInSeconds).toEqual(expectedAgeInSeconds);
@@ -41,6 +59,18 @@ describe('Person', function () {
 
 		expect(ageInMercury).toEqual(expectedAgeInMercury);
 	});
+
+	it('should test whether the age of an old user in Mercury years can be calculated', function () {
+		let planet = "mercury";
+		let ageInMercury = oldPerson.ageInPlanetYears(planet);
+
+		let ageInSeconds = oldPerson.ageInSeconds();
+		let secondsInMercuryYear = oldPerson.secondsInYear * 0.241;
+		let expectedAgeInMercury = ageInSeconds / secondsInMercuryYear;
+
+		expect(ageInMercury).toEqual(expectedAgeInMercury);
+	});
+
 
 	it('should test whether the age of the user in Venus years can be calculated', function () {
 		let planet = "venus";
