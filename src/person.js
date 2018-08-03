@@ -95,5 +95,41 @@ export class Person {
       let userAgeInEarth = this.ageInPlanetYears(planet);
       return expectancy - userAgeInEarth;
     }
+
+    if (planet === "mars") {
+      let expectancy = this.lifeExpectancy / this.planetOrbitalPeriods[3];
+      let userAgeInMars = this.ageInPlanetYears(planet);
+      return expectancy - userAgeInMars;
+    }
+
+    if (planet === "jupiter") {
+      let expectancy = this.lifeExpectancy / this.planetOrbitalPeriods[4];
+      let userAgeInJupiter = this.ageInPlanetYears(planet);
+      return expectancy - userAgeInJupiter;
+    }
+
+    if (planet === "saturn") {
+      let expectancy = this.lifeExpectancy / this.planetOrbitalPeriods[5];
+      let userAgeInSaturn = this.ageInPlanetYears(planet);
+      return expectancy - userAgeInSaturn;
+    }
+
+    if (planet === "uranus") {
+      let expectancy = this.lifeExpectancy / this.planetOrbitalPeriods[6];
+      let userAgeInUranus = this.ageInPlanetYears(planet);
+      return expectancy - userAgeInUranus;
+    }
+
+    if (planet === "neptune") {
+      let expectancy = this.lifeExpectancy / this.planetOrbitalPeriods[7];
+      let userAgeInNeptune = this.ageInPlanetYears(planet);
+      return expectancy - userAgeInNeptune;
+    }
+
+    if (planet === "pluto") {
+      let expectancy = this.lifeExpectancy / this.planetOrbitalPeriods[8];
+      let userAgeInPluto = this.ageInPlanetYears(planet);
+      return expectancy - userAgeInPluto;
+    }
   }
 }
