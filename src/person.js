@@ -50,5 +50,29 @@ export class Person {
       let secondsInPlanetYear = this.secondsInYear * this.planetOrbitalPeriods[4];
       return ageInSeconds/secondsInPlanetYear; 
     }
+    
+    if (planet === "saturn") {
+      let ageInSeconds = this.ageInSeconds();
+      let secondsInPlanetYear = this.secondsInYear * this.planetOrbitalPeriods[5];
+      return ageInSeconds/secondsInPlanetYear; 
+    }
+
+    if (planet === "uranus") {
+      let ageInSeconds = this.ageInSeconds();
+      let secondsInPlanetYear = this.secondsInYear * this.planetOrbitalPeriods[6];
+      return ageInSeconds/secondsInPlanetYear; 
+    }
+
+    if (planet === "neptune") {
+      let ageInSeconds = this.ageInSeconds();
+      let secondsInPlanetYear = this.secondsInYear * this.planetOrbitalPeriods[7];
+      return ageInSeconds/secondsInPlanetYear; 
+    }
+
+    if (planet === "pluto") {
+      let ageInSeconds = this.ageInSeconds();
+      let secondsInPlanetYear = this.secondsInYear * this.planetOrbitalPeriods[8];
+      return ageInSeconds/secondsInPlanetYear; 
+    }
   }
 }
