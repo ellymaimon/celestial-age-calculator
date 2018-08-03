@@ -44,7 +44,7 @@ describe('Person', function () {
 
 		let secondsToCurrentDate = oldPerson.currentDate.getTime() / 1000;
 		let secondsToBirthDate = (-oldPerson.birthDate.getTime() + oldPerson.currentDate.getTime()) / 1000;
-		let expectedAgeInSeconds = secondsToCurrentDate - secondsToBirthDate;
+		let expectedAgeInSeconds = secondsToCurrentDate + secondsToBirthDate;
 
 		expect(ageInSeconds).toEqual(expectedAgeInSeconds);
 	});
@@ -168,7 +168,20 @@ describe('Person', function () {
 		let userAgeInMercury = reusablePerson.ageInPlanetYears(planet);
 		let expectedYearsToLive = expectancyInMercury - userAgeInMercury;
 
+		expect(yearsToLive).toBeGreaterThan(0);
 		expect(yearsToLive).toEqual(expectedYearsToLive);
+	});
+
+	it('should test whether the years over the expected an old user has to live in Mercury can be calculated', function () {
+		let planet = "mercury";
+		let yearsLivedAboveExpectancy = oldPerson.yearsToLive(planet);
+
+		let expectancyInMercury = oldPerson.lifeExpectancy / oldPerson.planetOrbitalPeriods[0];
+		let userAgeInMercury = oldPerson.ageInPlanetYears(planet);
+		let expectedYearsLivedAboveExpecancy = userAgeInMercury - expectancyInMercury;
+
+		expect(yearsLivedAboveExpectancy).toBeGreaterThan(0);
+		expect(yearsLivedAboveExpectancy).toEqual(expectedYearsLivedAboveExpecancy);
 	});
 
 	it('should test whether the remaining years a user has to live in Venus can be calculated', function () {
@@ -191,6 +204,20 @@ describe('Person', function () {
 		let expectedYearsToLive = expectancyInEarth - userAgeInEarth;
 
 		expect(yearsToLive).toEqual(expectedYearsToLive);
+	});
+
+	it('should test whether the years over the expected an old user has to live in Earth can be calculated', function () {
+		let planet = "earth";
+		let yearsLivedAboveExpectancy = oldPerson.yearsToLive(planet);
+
+		let expectancyInEarth = oldPerson.lifeExpectancy / oldPerson.planetOrbitalPeriods[2];
+		let userAgeInEarth = oldPerson.ageInPlanetYears(planet);
+		let expectedYearsLivedAboveExpecancy = userAgeInEarth - expectancyInEarth;
+
+		console.log(yearsLivedAboveExpectancy);
+
+		expect(yearsLivedAboveExpectancy).toBeGreaterThan(0);
+		expect(yearsLivedAboveExpectancy).toEqual(expectedYearsLivedAboveExpecancy);
 	});
 
 	it('should test whether the remaining years a user has to live in Mars can be calculated', function () {
@@ -257,5 +284,19 @@ describe('Person', function () {
 		let expectedYearsToLive = expectancyInPluto - userAgeInPluto;
 
 		expect(yearsToLive).toEqual(expectedYearsToLive);
+	});
+
+	it('should test whether the years over the expected an old user has to live in Pluto can be calculated', function () {
+		let planet = "pluto";
+		let yearsLivedAboveExpectancy = oldPerson.yearsToLive(planet);
+
+		let expectancyInPluto = oldPerson.lifeExpectancy / oldPerson.planetOrbitalPeriods[8];
+		let userAgeInPluto = oldPerson.ageInPlanetYears(planet);
+		let expectedYearsLivedAboveExpecancy = userAgeInPluto - expectancyInPluto;
+
+		console.log(yearsLivedAboveExpectancy);
+
+		expect(yearsLivedAboveExpectancy).toBeGreaterThan(0);
+		expect(yearsLivedAboveExpectancy).toEqual(expectedYearsLivedAboveExpecancy);
 	});
 });
