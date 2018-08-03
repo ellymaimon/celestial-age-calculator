@@ -6,14 +6,13 @@
 
 ## Description
 
-Celestial age calculator is an application that calculate's a user's age in the different planets of our solar system based on their revolution period. The app will also determine how long a user has to live on each planet based upon the average life-expectancy. 
+Celestial age calculator is an application that calculate's a user's age in the different planets of our solar system based on their revolution period. The app will also determine how long a user has to live on each planet based upon the average life-expectancy of 80. 
 
 ## Program Specs
 
 | Behavior | Input | Output |
 |----------|-------|--------|
 | Program takes a user's age and converts it to seconds. | 26 years | 8.199e+8 seconds |
-| Program takes two dates and determines the difference in seconds. | 1/15/1991, 1/15/2018 | 8.515e+8 |
 | Program returns the age of a human in Mercury years. | 27 | 112.1 |
 | Program returns the age of a human in Venus years. | 27 | 43.8 |
 | Program returns the age of a human in Earth years. | 27 | 27 |
@@ -35,13 +34,6 @@ Celestial age calculator is an application that calculate's a user's age in the 
 * Type `npm run start`
 * Type `npm run test` to run all spec tests
 
-## Contribution Requirements
-
-1. Clone the repo
-1. Make a new branch
-1. Commit and push your changes
-1. Create a PR
-
 ## Technologies Used
 
 * JavaScript (ES6)
@@ -53,7 +45,7 @@ Celestial age calculator is an application that calculate's a user's age in the 
 
 ## Links
 
-* [Github Repo] ()
+* [Github Repo] (https://github.com/ellymaimon/celestial-age-calculator)
 
 ## License
 
