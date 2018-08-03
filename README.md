@@ -26,14 +26,13 @@ Celestial age calculator is an application that calculate's a user's age in the 
 
 ## Setup on OSX
 
-* Clone repo
-* Install npm (if it's not already installed) by running `npm install npm@latest -g`
-* Run `npm install` to install all packages
-* Run `npm run start`
-
-## Run Spec Tests
-
-* After proper project setup, simply run `npm run test`
+* Clone the repository
+* Install Node.js
+* Install npm by running `npm install npm@latest -g`
+* Install the Karma command line interface: `npm install -g karma-cli`
+* Type `npm install` to install all necessary packages
+* Type `npm run start`
+* Type `npm run test` to run all spec tests
 
 ## Contribution Requirements
 
@@ -44,9 +43,10 @@ Celestial age calculator is an application that calculate's a user's age in the 
 
 ## Technologies Used
 
-* HTML, CSS, JavaScript (ES6)
+* JavaScript (ES6)
+* Node.js
 * Node Package Manager (Npm)
-* Babel Compiler
+* Babel Transpiler
 * Jasmine Testing Framework
 * Karma Test Runner
 
