@@ -80,8 +80,14 @@ export class Person {
   yearsToLive(planet) {
     if (planet === "mercury") {
       let expectancy = this.lifeExpectancy / this.planetOrbitalPeriods[0];
-      let userAgeInMercury = this.ageInPlanetYears(planet); // ~112
+      let userAgeInMercury = this.ageInPlanetYears(planet);
       return expectancy - userAgeInMercury;
+    }
+
+    if (planet === "venus") {
+      let expectancy = this.lifeExpectancy / this.planetOrbitalPeriods[1];
+      let userAgeInVenus = this.ageInPlanetYears(planet);
+      return expectancy - userAgeInVenus;
     }
   }
 }
