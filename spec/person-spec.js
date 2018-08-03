@@ -24,9 +24,9 @@ describe('Person', function () {
     it('should test whether the age of the user in seconds can be calculated', function() {
         let ageInSeconds = reusablePerson.ageInSeconds();
 
-        let x = reusablePerson.currentDate.getTime() / 1000; //seconds from 1/1/1970 to current date (8/3/2018)
-        let y = reusablePerson.birthDate.getTime() / 1000; //seconds from 1/1/1970 to 8/21/1991
-        let expectedAgeInSeconds = x - y;
+        let secondsToCurrentDate = reusablePerson.currentDate.getTime() / 1000; //seconds from 1/1/1970 to current date (8/3/2018)
+        let secondsToBirthDate = reusablePerson.birthDate.getTime() / 1000; //seconds from 1/1/1970 to input birth date (8/21/1991)
+        let expectedAgeInSeconds = secondsToCurrentDate - secondsToBirthDate;
 
         expect(ageInSeconds).toEqual(expectedAgeInSeconds);
     });
