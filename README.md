@@ -16,6 +16,7 @@ Celestial age calculator is an application that calculate's a user's age in the 
 | Program takes two dates and determines the difference in seconds. | 1/15/1991, 1/15/2018 | 8.515e+8 |
 | Program returns the age of a human in Mercury years. | 27 | 112.1 |
 | Program returns the age of a human in Venus years. | 27 | 43.8 |
+| Program returns the age of a human in Earth years. | 27 | 27 |
 | Program returns the age of a human in Mars years. | 27 | 14.3 |
 | Program returns the age of a human in Jupiter years. | 27 | 2.27 |
 | Program returns the age of a human in Saturn years. | 27 | 0.91 |
