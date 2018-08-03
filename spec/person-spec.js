@@ -129,4 +129,18 @@ describe('Person', function () {
 
         expect(ageInPluto).toEqual(expectedAgeInPluto);
     });
+
+    it('should test whether the remaining years a user has to live in Mercury can be calculated', function () {
+        let planet = "mercury";
+        let yearsToLive = reusablePerson.yearsToLive(planet);
+
+
+        let expectancyInMercury = reusablePerson.lifeExpectancy / reusablePerson.planetOrbitalPeriods[0]; // ~331
+        let userAgeInMercury = reusablePerson.ageInPlanetYears(planet); // ~112
+        let expectedYearsToLive = expectancyInMercury - userAgeInMercury;
+
+        console.log(expectedYearsToLive);
+
+        expect(yearsToLive).toEqual(expectedYearsToLive);
+    });
 });
