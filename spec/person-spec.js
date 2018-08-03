@@ -162,4 +162,70 @@ describe('Person', function () {
 
         expect(yearsToLive).toEqual(expectedYearsToLive);
     });
+
+    it('should test whether the remaining years a user has to live in Mars can be calculated', function () {
+        let planet = "mars";
+        let yearsToLive = reusablePerson.yearsToLive(planet);
+
+        let expectancyInMars = reusablePerson.lifeExpectancy / reusablePerson.planetOrbitalPeriods[3]; // ~331
+        let userAgeInMars = reusablePerson.ageInPlanetYears(planet); 
+        let expectedYearsToLive = expectancyInMars - userAgeInMars;
+
+        expect(yearsToLive).toEqual(expectedYearsToLive);
+    });
+
+    it('should test whether the remaining years a user has to live in Jupiter can be calculated', function () {
+        let planet = "jupiter";
+        let yearsToLive = reusablePerson.yearsToLive(planet);
+
+        let expectancyInJupiter = reusablePerson.lifeExpectancy / reusablePerson.planetOrbitalPeriods[3]; // ~331
+        let userAgeInJupiter = reusablePerson.ageInPlanetYears(planet); 
+        let expectedYearsToLive = expectancyInJupiter - userAgeInJupiter;
+
+        expect(yearsToLive).toEqual(expectedYearsToLive);
+    });
+
+    it('should test whether the remaining years a user has to live in Saturn can be calculated', function () {
+        let planet = "saturn";
+        let yearsToLive = reusablePerson.yearsToLive(planet);
+
+        let expectancyInSaturn = reusablePerson.lifeExpectancy / reusablePerson.planetOrbitalPeriods[3]; // ~331
+        let userAgeInSaturn = reusablePerson.ageInPlanetYears(planet); 
+        let expectedYearsToLive = expectancyInSaturn - userAgeInSaturn;
+
+        expect(yearsToLive).toEqual(expectedYearsToLive);
+    });
+
+    it('should test whether the remaining years a user has to live in Uranus can be calculated', function () {
+        let planet = "uranus";
+        let yearsToLive = reusablePerson.yearsToLive(planet);
+
+        let expectancyInUranus = reusablePerson.lifeExpectancy / reusablePerson.planetOrbitalPeriods[3]; // ~331
+        let userAgeInUranus = reusablePerson.ageInPlanetYears(planet); 
+        let expectedYearsToLive = expectancyInUranus - userAgeInUranus;
+
+        expect(yearsToLive).toEqual(expectedYearsToLive);
+    });
+
+    it('should test whether the remaining years a user has to live in Neptune can be calculated', function () {
+        let planet = "neptune";
+        let yearsToLive = reusablePerson.yearsToLive(planet);
+
+        let expectancyInNeptune = reusablePerson.lifeExpectancy / reusablePerson.planetOrbitalPeriods[3]; // ~331
+        let userAgeInNeptune = reusablePerson.ageInPlanetYears(planet); 
+        let expectedYearsToLive = expectancyInNeptune - userAgeInNeptune;
+
+        expect(yearsToLive).toEqual(expectedYearsToLive);
+    });
+
+    it('should test whether the remaining years a user has to live in Pluto can be calculated', function () {
+        let planet = "pluto";
+        let yearsToLive = reusablePerson.yearsToLive(planet);
+
+        let expectancyInPluto = reusablePerson.lifeExpectancy / reusablePerson.planetOrbitalPeriods[3]; // ~331
+        let userAgeInPluto = reusablePerson.ageInPlanetYears(planet); 
+        let expectedYearsToLive = expectancyInPluto - userAgeInPluto;
+
+        expect(yearsToLive).toEqual(expectedYearsToLive);
+    });
 });
